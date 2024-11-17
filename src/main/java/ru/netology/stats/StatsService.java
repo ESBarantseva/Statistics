@@ -16,41 +16,43 @@ public class StatsService {
         return sumAllSales(sales) / sales.length;
     }
 
-    public int getMonthMaxSales(long[] sales){
+    public int getMonthMaxSales(long[] sales) {
         int monthMax = 0;
         for (int i = 0; i < sales.length; i++) {
-            if (sales[monthMax] <= sales [i]) {
+            if (sales[monthMax] <= sales[i]) {
                 monthMax = i;
 
             }
         }
-         return monthMax +1;
+        return monthMax + 1;
 
     }
-    public int getMonthMinSales(long[] sales){
+
+    public int getMonthMinSales(long[] sales) {
         int monthMin = 0;
         for (int i = 0; i < sales.length; i++) {
-            if (sales[monthMin] >= sales [i]) {
+            if (sales[monthMin] >= sales[i]) {
                 monthMin = i;
 
             }
         }
-        return monthMin +1;
+        return monthMin + 1;
 
     }
 
     public int countMonthsSalesBellowAverage(long[] sales) {
         int counter = 0;
         long average = calcAverageSale(sales);
-        for (long sale : sales){
-            if (sale <average) {
-                counter ++;
+        for (long sale : sales) {
+            if (sale < average) {
+                counter++;
 
             }
         }
         return counter;
 
     }
+
     public int countMonthsSalesAboveAverage(long[] sales) {
         int counter = 0;
         long average = calcAverageSale(sales);
